@@ -2,7 +2,8 @@
     --p1: #212121;
     --p2: #2d2d2d;
     --p3: #444444;
-    --p4: #808080;
+    --p4: #676666;
+    --p5: #808080;
 
     --s1: #75ff75;
 }
@@ -16,6 +17,8 @@ body{
         max-width: 1440px;
         margin: auto;
     }
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
 }
 
 main{
@@ -51,7 +54,7 @@ main{
                 width: 100px;
                 height: 100px;
                 border-radius: 15px;
-                background-color: var(--p4);
+                background-color: var(--p5);
                 text-align: center;
                 font-size: 40px;
                 position: relative;
@@ -63,16 +66,23 @@ main{
                     bottom: 0;
                     height: 20px;
                     width: 48px;
-                    background-color: var(p2);
+                    background-color: var(--p4);
                     border: 1px solid var(--p1);
                     cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 20px;
+                    transition: .1s;
                 }
                 .buttonsTimer:active{
                     background-color: black;
+                    color: var(--s1);
                 }
 
                 #btLeft{
                     border-radius: 0px 0px 0px 15px;
+                    
                 }
 
                 #btRight{
@@ -94,6 +104,7 @@ main{
             #btFocus:hover{
                 background-color: #017474;
                 color: white;
+                
             }
     }
     /* Metas Diarias */
