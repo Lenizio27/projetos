@@ -87,7 +87,7 @@ const Header = () => {
                 </nav>
             </div>
             {/* Header Mobile */}
-            <div className="hidden max-md:flex items-center justify-between px-4 py-2 h-[80px] fixed bg-s7 w-full z-10">
+            <div className="hidden max-md:flex items-center justify-between px-4 py-2 h-[80px] fixed bg-s7 w-full z-50">
                 <div 
                 className={`cursor-pointer transition-all duration-100 pi ${open ? `pi-align-left scale-x-90`: `pi-align-justify ${aplicarClasseDepois()}`} text-[20px] ${aplicarClasseDepois()}`} 
                 onClick={() => menuOpen(!open)}></div>

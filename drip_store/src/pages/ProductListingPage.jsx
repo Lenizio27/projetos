@@ -3,6 +3,8 @@ import { CardProdutosEmAlta } from "../components/ProductCard";
 import ImgTenis2 from "../assets/images/tenis_2.png";
 
 const ProductListingPage = () => {
+    const [open, setOpen] = useState(false)
+
     const arrayFiltroProdutos = [
         {
             title: "Marcas",
@@ -45,12 +47,35 @@ const ProductListingPage = () => {
                             <option value="" className="bg-c2">mais relevanes</option>
                         </select>
                     </div>
-                    <div className="md:hidden h-[50px] w-[50px] flex items-center bg-c2 justify-center text-s7 rounded-md">
+                    {/* Botao Filtrar */}
+                    <div 
+                    className="md:hidden h-[50px] w-[50px] flex items-center bg-c2 justify-center text-s7 rounded-md cursor-pointer active:bg-c1"
+                    onClick={()=> {setOpen(!open)}}
+                    >
                         <div className="pi pi-filter"></div>
                     </div>
                 </div>
                 <div className="flex">
-                    <aside className="flex-4 bg-s7 p-4 w-[308px]">
+                    <aside className="flex-4 bg-s7 p-4 w-[308px] max-md:hidden">
+                        <h3>Filtrar por</h3>
+                        <hr />
+                        {arrayFiltroProdutos.map((item) => (
+                            <div>
+                                <h2 className="font-bold my-1">{item.title}</h2>
+                                {item.radios.map(a => 
+                                <p className="flex items-center">
+                                    <input 
+                                    className="appearance-none w-4 h-4 border border-gray-400 rounded-sm checked:bg-c2 checked:border-purple-600 checked:before:content-['✓'] flex items-center text-white mr-1"
+                                    type="checkbox" 
+                                    id="radioCheck"/>
+                                    {a}
+                                </p>
+                                )}
+                            </div>
+                        ))}
+                    </aside>
+                    {/* radios mobile */}
+                    <aside className={`md:hidden left-0 fixed flex-4 bg-s7 p-4 w-[308px] h-[calc(100vh-80px)] top-[80px] ${open ? `translate-x-1 scale-x-100` : `scale-x-95 opacity-0 `} transition-all z-10`}>
                         <h3>Filtrar por</h3>
                         <hr />
                         {arrayFiltroProdutos.map((item) => (

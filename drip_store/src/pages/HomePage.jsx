@@ -31,7 +31,6 @@ const HomePage = () => {
 
     const arrayCardsTipo = [
         {image: IconBlusa},
-        {image: IconBlusa},
         {image: IconCalca},
         {image: IconFone},
         {image: IconTenis},

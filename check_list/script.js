@@ -1,4 +1,4 @@
 function periodoConcentracao(){
     let divTimerFocus = document.getElementById("divTimerFocus");
-    divTimerFocus.textContent = 
+    divTimerFocus.textContent = "";
 }
