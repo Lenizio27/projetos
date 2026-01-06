@@ -120,6 +120,10 @@ main{
     #sectionTasks{
         flex-basis: 300px;
     }
+    #sectionGoal{
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .timer-container {
