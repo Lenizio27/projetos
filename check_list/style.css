@@ -119,6 +119,14 @@ main{
     /* Tarefas */
     #sectionTasks{
         flex-basis: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & #btAddTask{
+            font-size: 20px;
+            cursor: pointer;
+        }
     }
     #sectionGoal{
         display: flex;

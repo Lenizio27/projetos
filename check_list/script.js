@@ -1,11 +1,15 @@
 let btFocus = document.getElementById("btFocus");
+let btAddTask = document.getElementById("btAddTask");
 let btLeft = document.getElementById("btLeft");
 let btRight = document.getElementById("btRight");
 let timerFocus = document.getElementById("timer");
 let timeout = document.getElementById("timeout");
 let Focus = 25;
 let ativacaoPeriodo = 0;
-// Function Time timerFocus
+
+
+// =============== Function Time timerFocus ===============
+
 function pushTimer(timer){
     timer === `+` ? Focus += 25 : Focus -= 25;
     if(Focus < 25){
@@ -23,7 +27,8 @@ function pushTimer(timer){
 btRight.addEventListener("click", ()=> pushTimer("+"));
 btLeft.addEventListener("click", ()=> pushTimer("-"));
 
-// Fucntion Timer
+// =============== Fucntion Timer ===============
+
 function ativarTimer(){
     if(ativacaoPeriodo != 0){
         let confirmacao = confirm("voce tem certeza que deseja comecar outro timer?")
@@ -55,3 +60,11 @@ function ativarTimer(){
     setInterval(updateTimer, 1000);
 }
 btFocus.addEventListener("click", ativarTimer)
+
+// =============== Function Adicionar Tarefas ===============
+
+btAddTask.addEventListener("click", AdicionarTarefas)
+function AdicionarTarefas(){
+    alert("ola, user")
+}
+
