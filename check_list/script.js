@@ -62,9 +62,17 @@ function ativarTimer(){
 btFocus.addEventListener("click", ativarTimer)
 
 // =============== Function Adicionar Tarefas ===============
+let tasks = [];
 
 btAddTask.addEventListener("click", AdicionarTarefas)
 function AdicionarTarefas(){
-    alert("ola, user")
+    let tasksUpdate = prompt("Digite sua tarefa")
+    if(tasksUpdate === null || tasksUpdate === "" ){
+        alert("Por favor, informe uma Tarefa validade")
+        return
+    }
+    tasks.push(tasksUpdate)
+    localStorage.setItem(tasks.length, "oclarroma")
+    console.log(tasks)
 }
 
