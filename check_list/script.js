@@ -84,14 +84,13 @@ function AdicionarTarefas(){
         alert("Por favor, informe uma Tarefa validade")
         return
     }
-    // for(let i = 0; i < tasks.length; i++){
-    //     let divTask = document.createElement("p");
-    //     divTask.classList.add("divTask")
-    //     divTask.textContent = tasks[i];
-    //     Tarefas.append(divTask)
-    // }
     tasks.push(tasksUpdate)
     localStorage.setItem("minhasTarefas", JSON.stringify(tasks))
+    let divTask = document.createElement("p");
+    divTask.classList.add("divTask")
+    divTask.textContent = tasks[tasks.length - 1]
+    Tarefas.append(divTask)
+
     console.log(tasks)
 }
 
