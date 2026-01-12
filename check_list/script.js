@@ -2,6 +2,7 @@ let btFocus = document.getElementById("btFocus");
 let btAddTask = document.getElementById("btAddTask");
 let btLeft = document.getElementById("btLeft");
 let btRight = document.getElementById("btRight");
+let btLimparTarefas = document.getElementById("btLimparTarefas");
 let timerFocus = document.getElementById("timer");
 let timeout = document.getElementById("timeout");
 let Tarefas = document.getElementById("Tarefas");
@@ -73,6 +74,9 @@ if(tasksSection != null){
         let divTask = document.createElement("p");
         divTask.classList.add("divTask")
         divTask.textContent = tasks[i]
+        let lixeira = document.createElement("div")
+        lixeira.classList.add("lixeiraTarefas")
+        divTask.append(lixeira)
         Tarefas.append(divTask)
     }
 }
@@ -86,6 +90,7 @@ function AdicionarTarefas(){
     }
     tasks.push(tasksUpdate)
     localStorage.setItem("minhasTarefas", JSON.stringify(tasks))
+    
     let divTask = document.createElement("p");
     divTask.classList.add("divTask")
     divTask.textContent = tasks[tasks.length - 1]
@@ -94,3 +99,16 @@ function AdicionarTarefas(){
     console.log(tasks)
 }
 
+// =============== Function Deletar Tarefas ===============
+
+btLimparTarefas.addEventListener("click", ()=>{
+    if(tasks != null || tasks == ""){
+        let confirmacao = confirm("Tem certeza que deseja prosseguir")
+        if(confirmacao == true){
+            localStorage.clear()
+            Tarefas.textContent = ""
+        }else{
+            return
+        }
+    }
+})

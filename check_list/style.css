@@ -139,6 +139,14 @@ main{
                 color: red;
             }
         }
+        .divTask{
+            display: flex;
+        }
+        .lixeiraTarefas{
+            width: 10px;
+            height: 10px;
+            background-color: #017474;
+        }
 
         #btLimparTarefas{
             width: 100%;
