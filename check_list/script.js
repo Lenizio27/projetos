@@ -74,8 +74,10 @@ if(tasksSection != null){
         let divTask = document.createElement("p");
         divTask.classList.add("divTask")
         divTask.textContent = tasks[i]
+
         let lixeira = document.createElement("div")
         lixeira.classList.add("lixeiraTarefas")
+        
         divTask.append(lixeira)
         Tarefas.append(divTask)
     }
@@ -92,14 +94,19 @@ function AdicionarTarefas(){
     localStorage.setItem("minhasTarefas", JSON.stringify(tasks))
     
     let divTask = document.createElement("p");
-    divTask.classList.add("divTask")
     divTask.textContent = tasks[tasks.length - 1]
+    divTask.classList.add("divTask")
+
+    let lixeira = document.createElement("div")
+    lixeira.classList.add("lixeiraTarefas")
+
+    divTask.append(lixeira)
     Tarefas.append(divTask)
 
     console.log(tasks)
 }
 
-// =============== Function Deletar Tarefas ===============
+// =============== Function Deletar Todas as Tarefas ===============
 
 btLimparTarefas.addEventListener("click", ()=>{
     if(tasks != null || tasks == ""){
@@ -113,3 +120,4 @@ btLimparTarefas.addEventListener("click", ()=>{
         }
     }
 })
+// =============== Function Deletar Tarefa ===============

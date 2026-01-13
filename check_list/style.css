@@ -5,7 +5,8 @@
     --p4: #676666;
     --p5: #808080;
 
-    --s1: #75ff75;
+    --s1: #299b45;
+    --s2: #7946b4;
 }
 
 body{
@@ -98,6 +99,7 @@ main{
                 width: 100%;
                 margin-top: 10px;
                 border-radius: 5px;
+                border: none;
                 padding: 5px;
                 background-color: var(--s1);
                 transition: .4s;
@@ -135,21 +137,35 @@ main{
         #Tarefas{
             display: flex;
             flex-direction: column;
+            gap: 5px;
+
             .divTask{
-                color: red;
+                display: flex;
+                position: relative;
+                background-color: var(--p3);
+                border-radius: 5px;
+                margin: 0;
+                padding: 10px;
+                align-items: center;
             }
         }
-        .divTask{
-            display: flex;
-        }
         .lixeiraTarefas{
-            width: 10px;
-            height: 10px;
+            position: absolute;
+            border-radius: 5px;
+            right: 5px;
+            width: 20px;
+            height: 20px;
             background-color: #017474;
+
         }
 
         #btLimparTarefas{
             width: 100%;
+            border: none;
+            padding: 5px 0;
+            margin: 5px 0;
+            border-radius: 5px;
+            background-color: var(--s1);
         }
 
         
@@ -184,7 +200,7 @@ circle {
 }
 
 .progress {
-  stroke: #7b7bff;
+  stroke: var(--s2);
   stroke-linecap: round;
   stroke-dasharray: 565;
   stroke-dashoffset: 565;
