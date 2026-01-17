@@ -77,10 +77,10 @@ if(tasksSection != null){
         divTask.classList.add("divTask")
         divTask.textContent = tasks[i]
 
-        let lixeira = document.createElement("div")
+        var lixeira = document.createElement("div")
         lixeira.classList.add("lixeiraTarefas", "completos")
 
-        let completo = document.createElement("div")
+        var completo = document.createElement("button")
         completo.classList.add("completoTarefas", "completos")
 
         divTask.append(lixeira, completo)
@@ -95,8 +95,8 @@ function AdicionarTarefas(){
         alert("Por favor, informe uma Tarefa validade")
         return
     }else{
-        let nTasks = tasks.length ;
-        while(nTasks > 0){
+        let nTasks = tasks.length - 1 ;
+        while(nTasks >= 0){
             if(tasks[nTasks] == tasksUpdate){
                 alert("Tarefa já adiciona, por favor informe um tarefa nova")
                 return
@@ -111,10 +111,10 @@ function AdicionarTarefas(){
     divTask.textContent = tasks[tasks.length - 1]
     divTask.classList.add("divTask")
 
-    let lixeira = document.createElement("div")
+    var lixeira = document.createElement("div")
     lixeira.classList.add("lixeiraTarefas", "completos")
 
-    let completo = document.createElement("div")
+    var completo = document.createElement("div")
     completo.classList.add("completoTarefas", "completos")
 
     divTask.append(lixeira, completo)
@@ -138,3 +138,6 @@ btLimparTarefas.addEventListener("click", ()=>{
     }
 })
 // =============== Function Deletar Tarefa ===============
+completo.addEventListener("click", ()=>{
+    alert("ola, mundo")
+})
